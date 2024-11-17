@@ -26,8 +26,6 @@ class LicenseValidator:
             encrypted_license = load_from_file(license_file)
             if not encrypted_license:
                 return self._validation_failed("Could not load license file")
-            self.logger.info("License loaded successfully %s", encrypted_license)
-
             license_data = json.loads(decrypt(encrypted_license, key=license_key))   
                      
             current_hareware_fingerprint = self.fingerprint.generate_fingerprint(hardware_dict=HardwareCollector().collect_hardware_info())

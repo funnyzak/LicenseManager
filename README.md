@@ -61,8 +61,7 @@ generator.generate_license(
     ├── setup.py
     ├── examples/
     │   ├── __init__.py
-    │   ├── simple_usage.py
-    │   └── advanced_usage.py
+    │   └── simple_usage.py
     ├── tests/
     │   ├── __init__.py
     │   ├── test_hardware_info.py

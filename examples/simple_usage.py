@@ -13,7 +13,7 @@ def main():
     hardware_id_file = 'hardware.id'
     fingerprint_file = 'fingerprint.json'
     license_lic = 'license.lic'
-    license_key = generate_key()
+    license_key = generate_key() # 许可证加解密密钥
 
     collector = HardwareCollector()
     # 保存硬件信息

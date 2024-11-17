@@ -26,7 +26,7 @@ class LicenseGenerator:
 
             if not hardware_fingerprint:
                 return False
-
+            
             # Prepare license data
             current_time = int(time.time())
             license_data = {

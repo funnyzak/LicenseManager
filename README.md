@@ -58,34 +58,24 @@ generator.generate_license(
 ## 项目结构
 
 ```plaintext
-    ├── setup.py
-    ├── examples/
-    │   ├── __init__.py
-    │   ├── simple_usage.py
-    │   └── advanced_usage.py
-    ├── tests/
-    │   ├── __init__.py
-    │   ├── test_hardware_info.py
-    │   ├── test_license_generator.py
-    │   └── test_license_validator.py
-    └── license_manager/
-        ├── __init__.py
-        ├── hardware/
-        │   ├── __init__.py
-        │   ├── collector.py
-        │   └── fingerprint.py
-        ├── generator/
-        │   ├── __init__.py
-        │   └── license_generator.py
-        ├── validator/
-        │   ├── __init__.py
-        │   └── license_validator.py
-        ├── crypto/
-        │   ├── __init__.py
-        │   └── encryption.py
-        └── utils/
-            ├── __init__.py
-            └── helpers.py
+    ├── setup.py                           # 项目配置文件
+    ├── examples/                          # 示例代码目录
+    │   └── simple_usage.py                # 简单用法示例
+    ├── tests/                             # 测试代码目录
+    │   └── test_hardware_info.py          # 许可证验证测试
+    └── license_manager/                   # LicenseManager 库目录
+        ├── hardware/                      # 硬件信息采集模块
+        │   ├── collector.py               # 硬件信息采集器
+        │   └── fingerprint.py             # 硬件指纹生成器
+        ├── generator/                     # 许可证生成模块
+        │   └── license_generator.py       # 许可证生成器
+        ├── validator/                     # 许可证验证模块
+        │   └── license_validator.py       # 许可证验证器
+        ├── crypto/                        # 加密模块
+        │   └── encryption.py              # 加密工具
+        └── utils/                         # 工具模块
+            └── helpers.py                 # 辅助工具
+```
 ```
 ## 开发
 
@@ -93,11 +83,11 @@ generator.generate_license(
 # 安装依赖
 pip install -r requirements.txt
 
-# 运行示例
-python examples/simple_usage.py
-
 # 安装包
-python setup.py install
+pip install -e .
+
+# 运行示例
+python -m examples.simple_usage
 
 # 验证安装
 python -c "import license_manager"
@@ -108,7 +98,11 @@ python -c "import license_manager"
 运行测试：
 
 ```bash
-pytest tests/
+# 运行所有测试
+python3 -m unittest discover -s tests
+
+# 运行单个测试
+python -m unittest tests.test_filename
 ```
 
 ## 许可证

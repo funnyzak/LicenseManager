@@ -1,7 +1,7 @@
 import unittest
-from license_manager.hardware.collector import collect_hardware_info
+from license_manager.hardware.collector import HardwareCollector
 
 class TestHardwareInfo(unittest.TestCase):
     def test_collect_hardware_info(self):
-        info = collect_hardware_info()
+        info = HardwareCollector().collect_hardware_info()
         self.assertIsNotNone(info)

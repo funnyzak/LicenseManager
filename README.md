@@ -93,11 +93,11 @@ generator.generate_license(
 # 安装依赖
 pip install -r requirements.txt
 
-# 运行示例
-python examples/simple_usage.py
-
 # 安装包
-python setup.py install
+pip install -e .
+
+# 运行示例
+python -m examples.simple_usage
 
 # 验证安装
 python -c "import license_manager"
